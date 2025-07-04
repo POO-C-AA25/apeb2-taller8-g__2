@@ -19,6 +19,7 @@ public class Problema1_JuegoRoles {
         System.out.println("GUERRRO: " + guerrero + " MAGO: " + mago);
     }
 }
+
 abstract class Personaje{
     public int vidas, experiencia, batallasGana;
     public Personaje(int vidas) {
@@ -28,6 +29,7 @@ abstract class Personaje{
     public String toString() {
         return "Personaje{" + "vidas=" + vidas + ", experiencia=" + experiencia + ", batallasGana=" + batallasGana + '}';}
 }
+
 class Guerrero extends Personaje{
     public String habilidades;
     public Guerrero(String habilidades, int vidas) {
@@ -39,10 +41,13 @@ class Guerrero extends Personaje{
         boolean gana = (bandera == 1) ? true : false;
         return gana;
     } 
-    public int defensa() { return 0;}
+    public int defensa() { 
+        return 0;
+    }
     public String toString() {
         return "Guerrero{" + "habilidades=" + habilidades + '}' + super.toString(); }
 }
+
 class Mago extends Personaje{
     public String estrategia;
     public Mago(String estrategia, int vidas) {
@@ -51,11 +56,15 @@ class Mago extends Personaje{
     public boolean ataque(Personaje personaje) { return false;} 
     public int defensa() { return 0;}
 }
+
 class Arquero extends Personaje{
 public String atributo;
     public Arquero(String atributo, int vidas) {
         super(vidas);
         this.atributo = atributo;    } 
-    public boolean ataque(Personaje personaje) { return false;} 
-    public int defensa() { return 0;}
+    public boolean ataque(Personaje personaje) { 
+        return false;
+    } 
+    public int defensa() { 
+        return 0;}
 }
